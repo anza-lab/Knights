@@ -1,4 +1,12 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Extract_Step1" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1148,7440" sap2010:WorkflowViewState.IdRef="Extract_Step1_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Extract_Step1" this:Extract_Step1.in_reference_number="CON/2042/19" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_reference_number" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1148,10264</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Extract_Step1_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -28,6 +36,11 @@
       <x:String>UiPath.UIAutomationNext.Enums</x:String>
       <x:String>UiPath.UIAutomationCore.Contracts</x:String>
       <x:String>System.Reflection</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -65,9 +78,28 @@
       <AssemblyReference>System.ComponentModel</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="512,7215" sap2010:WorkflowViewState.IdRef="Sequence_3">
+  <Sequence sap:VirtualizedContainerService.HintSize="608,10119" sap2010:WorkflowViewState.IdRef="Sequence_3">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="seller_two_salutaion" />
       <Variable x:TypeArguments="x:String" Name="seller_two_gender" />
@@ -82,14 +114,23 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Property Address Sequence" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_7">
+    <Sequence DisplayName="Property Address Sequence" sap:VirtualizedContainerService.HintSize="546,2985" sap2010:WorkflowViewState.IdRef="Sequence_7">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="property_address_1" />
+        <Variable x:TypeArguments="x:String" Name="property_address_3" />
+        <Variable x:TypeArguments="x:String" Name="property_address_2" />
+        <Variable x:TypeArguments="x:String" Name="property_address_4" />
+        <Variable x:TypeArguments="x:String" Name="property_address_5" />
+        <Variable x:TypeArguments="x:String" Name="property_address_6" />
+        <Variable x:TypeArguments="x:String" Name="property_address_7" />
+      </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'SPAN'" sap:VirtualizedContainerService.HintSize="388,107" sap2010:WorkflowViewState.IdRef="Click_17" KeyModifiers="None" MouseButton="BTN_LEFT">
+      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'SPAN'" sap:VirtualizedContainerService.HintSize="484,107" sap2010:WorkflowViewState.IdRef="Click_17" KeyModifiers="None" MouseButton="BTN_LEFT">
         <ui:Click.CursorPosition>
           <ui:CursorPosition Position="Center">
             <ui:CursorPosition.OffsetX>
@@ -101,7 +142,7 @@
           </ui:CursorPosition>
         </ui:Click.CursorPosition>
         <ui:Click.Target>
-          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1bd34442-a8d5-40a0-86f0-62061d08a0a4" InformativeScreenshot="e740d802ba452fbb5b8e6fc70143c5aa" Selector="&lt;html app='chrome.exe' title='Matter Details*LEAP' /&gt;&lt;webctrl aaname=' Property  ' parentid='cdk-drop-list-0' tag='SPAN' /&gt;">
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1bd34442-a8d5-40a0-86f0-62061d08a0a4" InformativeScreenshot="e740d802ba452fbb5b8e6fc70143c5aa" Selector="&lt;html app='chrome.exe' title='Matter Details*LEAP' /&gt;&lt;webctrl aaname=' Property  ' parentid='cdk-drop-list-*' tag='SPAN' /&gt;">
             <ui:Target.TimeoutMS>
               <InArgument x:TypeArguments="x:Int32" />
             </ui:Target.TimeoutMS>
@@ -111,9 +152,9 @@
           </ui:Target>
         </ui:Click.Target>
       </ui:Click>
-      <ui:GetValue ContinueOnError="{x:Null}" Value="{x:Null}" DisplayName="Get Text 'INPUT  input-4-82000'" sap:VirtualizedContainerService.HintSize="388,107" sap2010:WorkflowViewState.IdRef="GetValue_39">
+      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'INPUT  input-4-82000'" sap:VirtualizedContainerService.HintSize="484,107" sap2010:WorkflowViewState.IdRef="GetValue_39">
         <ui:GetValue.Target>
-          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b1ae0a32-dec8-4aea-8860-bad0b42ba651" InformativeScreenshot="bd9513f0d3fe361a4c9863d054147cc9" Selector="&lt;html app='chrome.exe' title='Matter Details* LEAP' /&gt;&lt;webctrl id='layoutrender_frame' tag='IFRAME' /&gt;&lt;webctrl id='input-4-82000' tag='INPUT' /&gt;">
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b1ae0a32-dec8-4aea-8860-bad0b42ba651" InformativeScreenshot="bd9513f0d3fe361a4c9863d054147cc9" Selector="&lt;html app='chrome.exe' title='Matter Details * LEAP' /&gt;&lt;webctrl id='layoutrender_frame' tag='IFRAME' /&gt;&lt;webctrl parentname='propertyName' tag='INPUT' type='text' /&gt;">
             <ui:Target.TimeoutMS>
               <InArgument x:TypeArguments="x:Int32" />
             </ui:Target.TimeoutMS>
@@ -122,10 +163,13 @@
             </ui:Target.WaitForReady>
           </ui:Target>
         </ui:GetValue.Target>
+        <ui:GetValue.Value>
+          <OutArgument x:TypeArguments="x:String">[property_address_1]</OutArgument>
+        </ui:GetValue.Value>
       </ui:GetValue>
-      <ui:GetValue ContinueOnError="{x:Null}" Value="{x:Null}" DisplayName="Get Text 'INPUT  input-2-81000'" sap:VirtualizedContainerService.HintSize="388,107" sap2010:WorkflowViewState.IdRef="GetValue_40">
+      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'INPUT  input-2-81000'" sap:VirtualizedContainerService.HintSize="484,107" sap2010:WorkflowViewState.IdRef="GetValue_40">
         <ui:GetValue.Target>
-          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2e87ccd5-6b39-4e21-89e6-0f04c1ebb3f5" InformativeScreenshot="b6f2740238dab4b6f149420f80f33c9a" Selector="&lt;html app='chrome.exe' title='Matter Details - CON/2042/19 - Taylor | LEAP' /&gt;&lt;webctrl id='layoutrender_frame' tag='IFRAME' /&gt;&lt;webctrl id='input-2-81000' tag='INPUT' /&gt;">
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2e87ccd5-6b39-4e21-89e6-0f04c1ebb3f5" InformativeScreenshot="b6f2740238dab4b6f149420f80f33c9a" Selector="&lt;html app='chrome.exe' title='Matter Details - * | LEAP' /&gt;&lt;webctrl id='layoutrender_frame' tag='IFRAME' /&gt;&lt;webctrl parentname='propertyNumber' tag='INPUT' type='text' /&gt;">
             <ui:Target.TimeoutMS>
               <InArgument x:TypeArguments="x:Int32" />
             </ui:Target.TimeoutMS>
@@ -134,10 +178,13 @@
             </ui:Target.WaitForReady>
           </ui:Target>
         </ui:GetValue.Target>
+        <ui:GetValue.Value>
+          <OutArgument x:TypeArguments="x:String">[property_address_2]</OutArgument>
+        </ui:GetValue.Value>
       </ui:GetValue>
-      <ui:GetValue ContinueOnError="{x:Null}" Value="{x:Null}" DisplayName="Get Text 'INPUT  input-6-84000'" sap:VirtualizedContainerService.HintSize="388,107" sap2010:WorkflowViewState.IdRef="GetValue_41">
+      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'INPUT  input-6-84000'" sap:VirtualizedContainerService.HintSize="484,107" sap2010:WorkflowViewState.IdRef="GetValue_41">
         <ui:GetValue.Target>
-          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="fe7bbe20-4ded-4098-9994-2047aa67e76b" InformativeScreenshot="4cafc691e9ad8fb9691901094114332e" Selector="&lt;html app='chrome.exe' title='Matter Details - CON/2042/19 - Taylor | LEAP' /&gt;&lt;webctrl id='layoutrender_frame' tag='IFRAME' /&gt;&lt;webctrl id='input-6-84000' tag='INPUT' /&gt;">
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="fe7bbe20-4ded-4098-9994-2047aa67e76b" InformativeScreenshot="4cafc691e9ad8fb9691901094114332e" Selector="&lt;html app='chrome.exe' title='Matter Details - * | LEAP' /&gt;&lt;webctrl id='layoutrender_frame' tag='IFRAME' /&gt;&lt;webctrl parentname='street' tag='INPUT' type='text' /&gt;">
             <ui:Target.TimeoutMS>
               <InArgument x:TypeArguments="x:Int32" />
             </ui:Target.TimeoutMS>
@@ -146,10 +193,13 @@
             </ui:Target.WaitForReady>
           </ui:Target>
         </ui:GetValue.Target>
+        <ui:GetValue.Value>
+          <OutArgument x:TypeArguments="x:String">[property_address_3]</OutArgument>
+        </ui:GetValue.Value>
       </ui:GetValue>
-      <ui:GetValue ContinueOnError="{x:Null}" Value="{x:Null}" DisplayName="Get Text 'INPUT  input-8-86000'" sap:VirtualizedContainerService.HintSize="388,107" sap2010:WorkflowViewState.IdRef="GetValue_42">
+      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'INPUT  input-8-86000'" sap:VirtualizedContainerService.HintSize="484,107" sap2010:WorkflowViewState.IdRef="GetValue_42">
         <ui:GetValue.Target>
-          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1da17c6a-a6dd-466b-a061-ca3dad1f7127" InformativeScreenshot="821d5cb2fa191997f15d7e0ea5872093" Selector="&lt;html app='chrome.exe' title='Matter Details - CON/2042/19 - Taylor | LEAP' /&gt;&lt;webctrl id='layoutrender_frame' tag='IFRAME' /&gt;&lt;webctrl id='input-8-86000' tag='INPUT' /&gt;">
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1da17c6a-a6dd-466b-a061-ca3dad1f7127" InformativeScreenshot="821d5cb2fa191997f15d7e0ea5872093" Selector="&lt;html app='chrome.exe' title='Matter Details -*| LEAP' /&gt;&lt;webctrl id='layoutrender_frame' tag='IFRAME' /&gt;&lt;webctrl parentname='district' tag='INPUT' type='text' /&gt;">
             <ui:Target.TimeoutMS>
               <InArgument x:TypeArguments="x:Int32" />
             </ui:Target.TimeoutMS>
@@ -158,10 +208,13 @@
             </ui:Target.WaitForReady>
           </ui:Target>
         </ui:GetValue.Target>
+        <ui:GetValue.Value>
+          <OutArgument x:TypeArguments="x:String">[property_address_4]</OutArgument>
+        </ui:GetValue.Value>
       </ui:GetValue>
-      <ui:GetValue ContinueOnError="{x:Null}" Value="{x:Null}" DisplayName="Get Text 'INPUT  input-10-85000'" sap:VirtualizedContainerService.HintSize="388,107" sap2010:WorkflowViewState.IdRef="GetValue_43">
+      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'INPUT  input-10-85000'" sap:VirtualizedContainerService.HintSize="484,107" sap2010:WorkflowViewState.IdRef="GetValue_43">
         <ui:GetValue.Target>
-          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="08fe99a1-944f-44dd-99b3-4af55d96b53d" InformativeScreenshot="0221043515e256896de128d1d0f3dc00" Selector="&lt;html app='chrome.exe' title='Matter Details - CON/2042/19 - Taylor | LEAP' /&gt;&lt;webctrl id='layoutrender_frame' tag='IFRAME' /&gt;&lt;webctrl id='input-10-85000' tag='INPUT' /&gt;">
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="08fe99a1-944f-44dd-99b3-4af55d96b53d" InformativeScreenshot="0221043515e256896de128d1d0f3dc00" Selector="&lt;html app='chrome.exe' title='Matter Details*LEAP' /&gt;&lt;webctrl id='layoutrender_frame' tag='IFRAME' /&gt;&lt;webctrl parentname='town' tag='INPUT' type='text' /&gt;">
             <ui:Target.TimeoutMS>
               <InArgument x:TypeArguments="x:Int32" />
             </ui:Target.TimeoutMS>
@@ -170,10 +223,13 @@
             </ui:Target.WaitForReady>
           </ui:Target>
         </ui:GetValue.Target>
+        <ui:GetValue.Value>
+          <OutArgument x:TypeArguments="x:String">[property_address_5]</OutArgument>
+        </ui:GetValue.Value>
       </ui:GetValue>
-      <ui:GetValue ContinueOnError="{x:Null}" Value="{x:Null}" DisplayName="Get Text 'INPUT  input-12-87000'" sap:VirtualizedContainerService.HintSize="388,107" sap2010:WorkflowViewState.IdRef="GetValue_44">
+      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'INPUT  input-12-87000'" sap:VirtualizedContainerService.HintSize="484,107" sap2010:WorkflowViewState.IdRef="GetValue_44">
         <ui:GetValue.Target>
-          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="19e8fa93-b6b1-4a60-9412-516015d5c25a" InformativeScreenshot="45be55c98e6c148c9287b00d1e5fbfae" Selector="&lt;html app='chrome.exe' title='Matter Details - CON/2042/19 - Taylor | LEAP' /&gt;&lt;webctrl id='layoutrender_frame' tag='IFRAME' /&gt;&lt;webctrl id='input-12-87000' tag='INPUT' /&gt;">
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="19e8fa93-b6b1-4a60-9412-516015d5c25a" InformativeScreenshot="45be55c98e6c148c9287b00d1e5fbfae" Selector="&lt;html app='chrome.exe' title='Matter Details*| LEAP' /&gt;&lt;webctrl id='layoutrender_frame' tag='IFRAME' /&gt;&lt;webctrl parentname='county' tag='INPUT' type='text' /&gt;">
             <ui:Target.TimeoutMS>
               <InArgument x:TypeArguments="x:Int32" />
             </ui:Target.TimeoutMS>
@@ -182,10 +238,13 @@
             </ui:Target.WaitForReady>
           </ui:Target>
         </ui:GetValue.Target>
+        <ui:GetValue.Value>
+          <OutArgument x:TypeArguments="x:String">[property_address_6]</OutArgument>
+        </ui:GetValue.Value>
       </ui:GetValue>
-      <ui:GetValue ContinueOnError="{x:Null}" Value="{x:Null}" DisplayName="Get Text 'INPUT  input-14-83000'" sap:VirtualizedContainerService.HintSize="388,107" sap2010:WorkflowViewState.IdRef="GetValue_45">
+      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'INPUT  input-14-83000'" sap:VirtualizedContainerService.HintSize="484,107" sap2010:WorkflowViewState.IdRef="GetValue_45">
         <ui:GetValue.Target>
-          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d5b7644a-c3dc-402f-bba4-fbc26170da8d" InformativeScreenshot="eb0d2929fc40a15ea9e98987fd66899f" Selector="&lt;html app='chrome.exe' title='Matter Details - CON/2042/19 - Taylor | LEAP' /&gt;&lt;webctrl id='layoutrender_frame' tag='IFRAME' /&gt;&lt;webctrl id='input-14-83000' tag='INPUT' /&gt;">
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d5b7644a-c3dc-402f-bba4-fbc26170da8d" InformativeScreenshot="eb0d2929fc40a15ea9e98987fd66899f" Selector="&lt;html app='chrome.exe' title='Matter Details * | LEAP' /&gt;&lt;webctrl id='layoutrender_frame' tag='IFRAME' /&gt;&lt;webctrl parentname='postcode' tag='INPUT' type='text' /&gt;">
             <ui:Target.TimeoutMS>
               <InArgument x:TypeArguments="x:Int32" />
             </ui:Target.TimeoutMS>
@@ -194,35 +253,55 @@
             </ui:Target.WaitForReady>
           </ui:Target>
         </ui:GetValue.Target>
+        <ui:GetValue.Value>
+          <OutArgument x:TypeArguments="x:String">[property_address_7]</OutArgument>
+        </ui:GetValue.Value>
       </ui:GetValue>
-      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A '" sap:VirtualizedContainerService.HintSize="388,107" sap2010:WorkflowViewState.IdRef="Click_18" KeyModifiers="None" MouseButton="BTN_LEFT">
-        <ui:Click.CursorPosition>
-          <ui:CursorPosition Position="Center">
-            <ui:CursorPosition.OffsetX>
-              <InArgument x:TypeArguments="x:Int32" />
-            </ui:CursorPosition.OffsetX>
-            <ui:CursorPosition.OffsetY>
-              <InArgument x:TypeArguments="x:Int32" />
-            </ui:CursorPosition.OffsetY>
-          </ui:CursorPosition>
-        </ui:Click.CursorPosition>
-        <ui:Click.Target>
-          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6034cb2a-0253-48a6-a82b-ae24a8963105" InformativeScreenshot="290bcf24936d090ed20e923c61c836db" Selector="&lt;html app='chrome.exe' title='Matter Details - CON/2042/19 - Taylor | LEAP' /&gt;&lt;webctrl id='layoutrender_frame' tag='IFRAME' /&gt;&lt;webctrl aaname='Property Details' tag='A' /&gt;">
-            <ui:Target.TimeoutMS>
-              <InArgument x:TypeArguments="x:Int32" />
-            </ui:Target.TimeoutMS>
-            <ui:Target.WaitForReady>
-              <InArgument x:TypeArguments="ui:WaitForReady" />
-            </ui:Target.WaitForReady>
-          </ui:Target>
-        </ui:Click.Target>
-      </ui:Click>
-      <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="checked" DisplayName="Get Attribute 'LABEL'" sap:VirtualizedContainerService.HintSize="388,203" sap2010:WorkflowViewState.IdRef="GetAttribute_4">
+      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+        <ui:CommentOut.Body>
+          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,218" sap2010:WorkflowViewState.IdRef="Sequence_8">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A '" sap:VirtualizedContainerService.HintSize="388,107" sap2010:WorkflowViewState.IdRef="Click_18" KeyModifiers="None" MouseButton="BTN_LEFT">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6034cb2a-0253-48a6-a82b-ae24a8963105" InformativeScreenshot="290bcf24936d090ed20e923c61c836db" Selector="&lt;html app='chrome.exe' title='Matter Details - CON/2042/19 - Taylor | LEAP' /&gt;&lt;webctrl id='layoutrender_frame' tag='IFRAME' /&gt;&lt;webctrl aaname='Property Details' tag='A' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Click.Target>
+            </ui:Click>
+          </Sequence>
+        </ui:CommentOut.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:CommentOut>
+      <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="checked" DisplayName="Get Attribute 'LABEL'" sap:VirtualizedContainerService.HintSize="484,203" sap2010:WorkflowViewState.IdRef="GetAttribute_4">
         <ui:GetAttribute.Result>
           <OutArgument x:TypeArguments="x:Boolean">[tenure_leasehold]</OutArgument>
         </ui:GetAttribute.Result>
         <ui:GetAttribute.Target>
-          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f29a7e00-f853-4990-b26b-4e1ed2268b19" InformativeScreenshot="ac181b0aab8cf11cec8a61feb3dcdfb5" Selector="&lt;html app='chrome.exe' title='Matter Details - CON/2042/19 - Taylor | LEAP' /&gt;&lt;webctrl id='layoutrender_frame' tag='IFRAME' /&gt;&lt;webctrl parentid='radio_3' tag='LABEL' /&gt;">
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f29a7e00-f853-4990-b26b-4e1ed2268b19" InformativeScreenshot="ac181b0aab8cf11cec8a61feb3dcdfb5" Selector="&lt;html app='chrome.exe' title='Matter Details *| LEAP' /&gt;&lt;webctrl id='layoutrender_frame' tag='IFRAME' /&gt;&lt;webctrl css-selector='body&amp;gt;leap-root&amp;gt;ng-component&amp;gt;leap-page&amp;gt;leap-page-content&amp;gt;leap-section&amp;gt;leap-section&amp;gt;leap-section-content&amp;gt;div&amp;gt;leap-content-radio-group&amp;gt;leap-radio-group&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;leap-radio&amp;gt;div' parentname='leaseholdFreehold' tag='DIV' /&gt;">
             <ui:Target.TimeoutMS>
               <InArgument x:TypeArguments="x:Int32" />
             </ui:Target.TimeoutMS>
@@ -232,12 +311,12 @@
           </ui:Target>
         </ui:GetAttribute.Target>
       </ui:GetAttribute>
-      <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="checked" DisplayName="Get Attribute 'LABEL'" sap:VirtualizedContainerService.HintSize="388,203" sap2010:WorkflowViewState.IdRef="GetAttribute_5">
+      <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="checked" DisplayName="Get Attribute 'LABEL'" sap:VirtualizedContainerService.HintSize="484,203" sap2010:WorkflowViewState.IdRef="GetAttribute_5">
         <ui:GetAttribute.Result>
           <OutArgument x:TypeArguments="x:Boolean">[tenure_freehold]</OutArgument>
         </ui:GetAttribute.Result>
         <ui:GetAttribute.Target>
-          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7cf0fba5-eeb1-4ec5-a6e1-3545bc35858a" InformativeScreenshot="31e6cc10a2cb5eb1e00d2955160c7639" Selector="&lt;html app='chrome.exe' title='Matter Details - CON/2042/19 - Taylor | LEAP' /&gt;&lt;webctrl id='layoutrender_frame' tag='IFRAME' /&gt;&lt;webctrl aaname='              Freehold' parentid='radio_3' tag='LABEL' /&gt;">
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7cf0fba5-eeb1-4ec5-a6e1-3545bc35858a" InformativeScreenshot="31e6cc10a2cb5eb1e00d2955160c7639" Selector="&lt;html app='chrome.exe' title='Matter Details - * | LEAP' /&gt;&lt;webctrl id='layoutrender_frame' tag='IFRAME' /&gt;&lt;webctrl css-selector='body&amp;gt;leap-root&amp;gt;ng-component&amp;gt;leap-page&amp;gt;leap-page-content&amp;gt;leap-section&amp;gt;leap-section&amp;gt;leap-section-content&amp;gt;div&amp;gt;leap-content-radio-group&amp;gt;leap-radio-group&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;leap-radio&amp;gt;div' idx='2' parentname='leaseholdFreehold' tag='DIV' /&gt;">
             <ui:Target.TimeoutMS>
               <InArgument x:TypeArguments="x:Int32" />
             </ui:Target.TimeoutMS>
@@ -247,7 +326,37 @@
           </ui:Target>
         </ui:GetAttribute.Target>
       </ui:GetAttribute>
-      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON'" sap:VirtualizedContainerService.HintSize="388,107" sap2010:WorkflowViewState.IdRef="Click_19" KeyModifiers="None" MouseButton="BTN_LEFT">
+      <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="484,973" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="Data\Data_Extracted_Main.xlsx">
+        <ui:ExcelApplicationScope.Body>
+          <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,863" sap2010:WorkflowViewState.IdRef="Sequence_9">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="sd:DataTable" Name="current_datatable" />
+                <Variable x:TypeArguments="x:Int32" Name="row_index" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:ExcelReadRange AddHeaders="True" DataTable="[current_datatable]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="388,60" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="Sheet1">
+                <ui:ExcelReadRange.Range>
+                  <InArgument x:TypeArguments="x:String">
+                    <Literal x:TypeArguments="x:String" Value="" />
+                  </InArgument>
+                </ui:ExcelReadRange.Range>
+              </ui:ExcelReadRange>
+              <ui:LookupDataTable CellValue="{x:Null}" LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[current_datatable]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="388,292" sap2010:WorkflowViewState.IdRef="LookupDataTable_1" LookupColumnName="Case Reference" LookupValue="[in_reference_number]" RowIndex="[row_index]" />
+              <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="Property Address" DisplayName="Update Row Item" sap:VirtualizedContainerService.HintSize="388,192" sap2010:WorkflowViewState.IdRef="UpdateRowItem_1" Row="[current_datatable(row_index)]" Value="[property_address_1+&quot; &quot;+property_address_2+&quot; &quot;+property_address_3+&quot; &quot;+property_address_4+&quot; &quot;+property_address_5+&quot; &quot;+property_address_6+&quot; &quot;+property_address_7]" />
+              <ui:ExcelWriteRange AddHeaders="True" DataTable="[current_datatable]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="388,88" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="Sheet1" StartingCell="A1" />
+            </Sequence>
+          </ActivityAction>
+        </ui:ExcelApplicationScope.Body>
+      </ui:ExcelApplicationScope>
+      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON'" sap:VirtualizedContainerService.HintSize="484,107" sap2010:WorkflowViewState.IdRef="Click_19" KeyModifiers="None" MouseButton="BTN_LEFT">
         <ui:Click.CursorPosition>
           <ui:CursorPosition Position="Center">
             <ui:CursorPosition.OffsetX>
@@ -259,7 +368,7 @@
           </ui:CursorPosition>
         </ui:Click.CursorPosition>
         <ui:Click.Target>
-          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="911ef21b-2b1e-44f1-9856-2020a8dabaef" InformativeScreenshot="9e7f701f866ebb111a90ee3c82476d0e" Selector="&lt;html app='chrome.exe' title='Matter Details - CON/2042/19 - Taylor | LEAP' /&gt;&lt;webctrl aaname=' Close ' parentid='modal-container' tag='BUTTON' type='button' /&gt;">
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="911ef21b-2b1e-44f1-9856-2020a8dabaef" InformativeScreenshot="9e7f701f866ebb111a90ee3c82476d0e" Selector="&lt;html app='chrome.exe' title='Matter Details - * | LEAP' /&gt;&lt;webctrl id='layoutrender_frame' tag='IFRAME' /&gt;&lt;webctrl aaname='Cancel' tag='BUTTON' /&gt;">
             <ui:Target.TimeoutMS>
               <InArgument x:TypeArguments="x:Int32" />
             </ui:Target.TimeoutMS>
@@ -270,7 +379,7 @@
         </ui:Click.Target>
       </ui:Click>
     </Sequence>
-    <Sequence DisplayName="Seller Details Sequence" sap:VirtualizedContainerService.HintSize="450,6741" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence DisplayName="Seller Details Sequence" sap:VirtualizedContainerService.HintSize="546,6741" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Boolean" Name="second_seller" />
         <Variable x:TypeArguments="x:String" Name="seller_one_salutaion" />
@@ -322,7 +431,7 @@
           </ui:CursorPosition>
         </ui:Click.CursorPosition>
         <ui:Click.Target>
-          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="91ba6968-48aa-41ab-bd7e-5589bcbc1c4f" InformativeScreenshot="157dc1dba7a7bab1b822b9c953be6bae" Selector="&lt;html app='chrome.exe' title='Matter Details* | LEAP' /&gt;&lt;webctrl class='x-list-group-item-header' parentid='cdk-drop-list-0' idx='3' tag='DIV' /&gt;">
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="91ba6968-48aa-41ab-bd7e-5589bcbc1c4f" InformativeScreenshot="157dc1dba7a7bab1b822b9c953be6bae" Selector="&lt;html app='chrome.exe' title='Matter Details - *| LEAP' /&gt;&lt;webctrl parentid='cdk-drop-list-*' tag='SPAN' aaname=' Buyer  ' /&gt;">
             <ui:Target.TimeoutMS>
               <InArgument x:TypeArguments="x:Int32" />
             </ui:Target.TimeoutMS>
@@ -344,7 +453,7 @@
           </ui:CursorPosition>
         </ui:Click.CursorPosition>
         <ui:Click.Target>
-          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="328a0d4f-55ae-4b28-a5c3-5c5c255c4bcf" InformativeScreenshot="d57faf340e229d3aaa315a44374d8e94" Selector="&lt;html app='chrome.exe' title='Matter Details - CON/2042/19 - Taylor | LEAP' /&gt;&lt;webctrl parentid='modal-container' tag='SC-INITIALS-CIRCLE' idx='1' /&gt;">
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="328a0d4f-55ae-4b28-a5c3-5c5c255c4bcf" InformativeScreenshot="d57faf340e229d3aaa315a44374d8e94" Selector="&lt;html app='chrome.exe' title='Matter Details *| LEAP' /&gt;&lt;webctrl parentid='modal-container' tag='SC-INITIALS-CIRCLE' idx='1' /&gt;">
             <ui:Target.TimeoutMS>
               <InArgument x:TypeArguments="x:Int32" />
             </ui:Target.TimeoutMS>
@@ -416,10 +525,7 @@
       </ui:GetValue>
       <ui:UiElementExists DisplayName="Element Exists" Exists="[second_seller]" sap:VirtualizedContainerService.HintSize="388,87" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
         <ui:UiElementExists.Target>
-          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4c8d6dc5-167b-4383-8523-3efcc32929e9" Selector="&lt;html app='chrome.exe' title='Matter Details - CON/2042/19 - Taylor | LEAP' /&gt;&lt;webctrl parentid='modal-container' tag='SC-INITIALS-CIRCLE' idx='2' /&gt;">
-            <ui:Target.TimeoutMS>
-              <InArgument x:TypeArguments="x:Int32" />
-            </ui:Target.TimeoutMS>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4c8d6dc5-167b-4383-8523-3efcc32929e9" Selector="&lt;html app='chrome.exe' title='Matter Details -* LEAP' /&gt;&lt;webctrl parentid='modal-container' tag='SC-INITIALS-CIRCLE' idx='2' /&gt;" TimeoutMS="3000">
             <ui:Target.WaitForReady>
               <InArgument x:TypeArguments="ui:WaitForReady" />
             </ui:Target.WaitForReady>
