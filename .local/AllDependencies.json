@@ -18646,8 +18646,8 @@
   },
   "project": {
     "restore": {
-      "projectUniqueName": "Knights_Data_Extract",
-      "projectName": "Knights_Data_Extract",
+      "projectUniqueName": "Knights_Data_Extract_PurchaseCases",
+      "projectName": "Knights_Data_Extract_PurchaseCases",
       "projectPath": "C:\\GIT_Knights_DataExtract_1.0\\Knights\\.local",
       "packagesPath": "C:\\Users\\RPA35\\.nuget\\packages\\",
       "outputPath": "C:\\GIT_Knights_DataExtract_1.0\\Knights\\.local"

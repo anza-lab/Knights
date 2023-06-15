@@ -1,5 +1,5 @@
 {
-  "name": "Knights_Data_Extract",
+  "name": "Knights_Data_Extract_PurchaseCases",
   "description": "Robotic Enterprise Framework",
   "main": "Main.xaml",
   "dependencies": {

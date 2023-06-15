@@ -217,16 +217,23 @@
     </ui:ExcelApplicationScope>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Search_Case.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="506,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Search_Case.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_Case">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem" />
-        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Case">[in_TransactionItem]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Extract_Step1.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="506,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Extract_Step1.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_reference_number">[in_TransactionItem]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_excel_to_update">[in_Config("OutputExcel").ToString]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_excel_sheet_to_update">Sheet1</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_reference_number">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_excel_to_update">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;OutputExcel&quot;).ToString" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_excel_sheet_to_update">
+          <Literal x:TypeArguments="x:String">Sheet1</Literal>
+        </InArgument>
+        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+          <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
+        </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="506,1605" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_3" InstanceCachePeriod="3000" WorkbookPath="[in_Config(&quot;OutputExcel&quot;).ToString]">
@@ -345,7 +352,7 @@
         </ui:CursorPosition>
       </ui:Click.CursorPosition>
       <ui:Click.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d391d09b-0f27-4a75-9ae7-30d695127058" InformativeScreenshot="5f0332c7f393f2f9e1a4bac333c9d4ae" Selector="&lt;html app='chrome.exe' title='Matters | LEAP' /&gt;&lt;webctrl tag='IMG' /&gt;">
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d391d09b-0f27-4a75-9ae7-30d695127058" InformativeScreenshot="5f0332c7f393f2f9e1a4bac333c9d4ae" Selector="&lt;html app='chrome.exe' title='Matter Details*LEAP' /&gt;&lt;webctrl tag='IMG' /&gt;">
           <ui:Target.TimeoutMS>
             <InArgument x:TypeArguments="x:Int32" />
           </ui:Target.TimeoutMS>
